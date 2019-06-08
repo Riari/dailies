@@ -1,0 +1,187 @@
+@import './vars';
+@import './themes/dark';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap');
+
+html, body {
+	min-height: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: $bg;
+	font: 14px/1.21 'Roboto Slab', sans-serif;
+	font-weight: 400;
+	color: $color-text;
+}
+
+.wrap {
+	display: flex;
+	height: 100%;
+	min-height: 100%;
+}
+
+.side {
+	width: 280px;
+	border-right: 1px solid rgba(153, 153, 153, 0.2);
+	background: $bg;
+	overflow: hidden;
+	will-change: width;
+	transition: width .2s ease-out;
+
+	.taskbar {
+		padding: 1em;
+		border-bottom: 1px solid rgba(153, 153, 153, 0.2);
+		text-align: right;
+	}
+
+	.content {
+		width: 280px;
+
+		.section {
+			padding: 1em;
+			border-bottom: 1px solid rgba(153, 153, 153, 0.2);
+
+			.item {
+				margin-bottom: .5em;
+				color: transparentize($color-text, .3);
+			}
+		}
+
+		h2 {
+			padding: 0;
+			margin: 0 0 1em 0;
+		}
+
+		ul {
+			display: block;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			white-space: nowrap;
+
+			li {
+				padding: .8em 1.2em;
+				margin: 0 0 .5em 0;
+				border-radius: .4em;
+				font-weight: bold;
+				color: $color-text;
+				cursor: pointer;
+				transition: background .2s;
+
+				&:hover {
+					background: rgba(153, 153, 153, 0.2);
+				}
+
+				&.active {
+					background: $bg-gradient;
+					color: #fff;
+				}
+			}
+		}
+
+		.stats {
+			strong {
+				span {
+					float: right;
+					color: #ffc13a;
+				}
+			}
+
+			.bar {
+				position: relative;
+				margin: 1em 0;
+				height: .8em;
+
+				.background {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					background: rgba(0, 0, 0, .2);
+					clip-path: polygon(95% 0, 100% 50%, 95% 100%, 5% 100%, 0% 50%, 5% 0);
+				}
+
+				.fill {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					filter: drop-shadow(0 0 5px rgba(#ff823a, .5));
+
+					.inner {
+						height: 100%;
+						background: linear-gradient(45deg, #ffc13a 0%, #ffd270 100%);
+						clip-path: polygon(95% 0, 100% 50%, 95% 100%, 5% 100%, 0% 50%, 5% 0);
+					}
+				}
+			}
+		}
+
+		.records {
+			strong {
+				span {
+					float: right;
+					color: #28d37e;
+				}
+			}
+		}
+	}
+}
+
+.main {
+	min-height: 100%;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+
+	.hero {
+		background: $bg-gradient;
+	
+		.taskbar {
+			padding: 1em;
+			border-bottom: 1px solid rgba(255, 255, 255, .2);
+	
+			svg {
+				color: #fff;
+			}
+		}
+	
+		h1 {
+			margin: 0;
+			padding: 2em 0;
+			text-align: center;
+			color: #fff;
+		}
+	}
+
+	.tasks {
+		padding: 2em;
+		flex: 1;
+
+		h2:first-child {
+			margin-top: 0;
+		}
+	}
+
+	button {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 1em;
+		border: none;
+		background: none;
+		font-family: 'Nunito', sans-serif;
+		font-size: 1.2em;
+		font-weight: bold;
+		color: #ff0062;
+		text-align: center;
+		border-top: 1px solid rgba(153, 153, 153, 0.2);
+	
+		svg {
+			vertical-align: -6px;
+		}
+	}
+}
+
+@media only screen and (max-width: 42em) {
+	.side {
+		width: 0;
+	}
+}
