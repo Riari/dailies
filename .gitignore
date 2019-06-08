@@ -1,3 +1,5 @@
+dailies.exe
 node_modules
 /build
+/server/assets_vfsdata.go
 /*.log
