@@ -3,6 +3,10 @@ import { Component } from 'preact';
 import Task from './components/Task';
 import { Menu, PlusSquare, X } from 'react-feather';
 
+if (!('indexedDB' in window)) {
+	alert('This browser doesn\'t support IndexedDB');
+}
+
 export default class App extends Component {
 	render() {
 		const incompleteTaskData = [
@@ -47,7 +51,7 @@ export default class App extends Component {
 								<strong>Level <span>43</span></strong>
 								<div className="bar">
 									<div className="background"></div>
-									<div className="fill"><div class="inner" style="width: 65%"></div></div>
+									<div className="fill" style="width: 65%"></div>
 								</div>
 							</div>
 							<div class="item">

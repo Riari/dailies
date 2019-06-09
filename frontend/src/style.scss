@@ -16,7 +16,7 @@ html, body {
 .wrap {
 	display: flex;
 	height: 100%;
-	min-height: 100%;
+	min-height: 100vh;
 }
 
 .side {
@@ -95,21 +95,16 @@ html, body {
 					position: absolute;
 					width: 100%;
 					height: 100%;
+					border-radius: .2em;
 					background: rgba(0, 0, 0, .2);
-					clip-path: polygon(95% 0, 100% 50%, 95% 100%, 5% 100%, 0% 50%, 5% 0);
 				}
 
 				.fill {
 					position: absolute;
-					width: 100%;
 					height: 100%;
-					filter: drop-shadow(0 0 5px rgba(#ff823a, .5));
-
-					.inner {
-						height: 100%;
-						background: linear-gradient(45deg, #ffc13a 0%, #ffd270 100%);
-						clip-path: polygon(95% 0, 100% 50%, 95% 100%, 5% 100%, 0% 50%, 5% 0);
-					}
+					border-radius: .2em;
+					background: linear-gradient(45deg, #ffc13a 0%, #ffd270 100%);
+					box-shadow: 0 0 5px rgba(#ff823a, .5);
 				}
 			}
 		}
@@ -126,8 +121,8 @@ html, body {
 }
 
 .main {
-	min-height: 100%;
 	display: flex;
+	min-height: 100vh;
 	flex: 1;
 	flex-direction: column;
 
@@ -153,29 +148,31 @@ html, body {
 
 	.tasks {
 		padding: 2em;
-		flex: 1;
+		flex: 1 0 auto;
 
 		h2:first-child {
 			margin-top: 0;
 		}
 	}
 
-	button {
-		display: block;
-		box-sizing: border-box;
-		width: 100%;
-		padding: 1em;
-		border: none;
-		background: none;
-		font-family: 'Nunito', sans-serif;
-		font-size: 1.2em;
-		font-weight: bold;
-		color: #ff0062;
-		text-align: center;
-		border-top: 1px solid rgba(153, 153, 153, 0.2);
-	
-		svg {
-			vertical-align: -6px;
+	.action {
+		button {
+			display: block;
+			box-sizing: border-box;
+			width: 100%;
+			padding: 1em;
+			border: none;
+			background: none;
+			font-family: 'Nunito', sans-serif;
+			font-size: 1.2em;
+			font-weight: bold;
+			color: #ff0062;
+			text-align: center;
+			border-top: 1px solid rgba(153, 153, 153, 0.2);
+		
+			svg {
+				vertical-align: -6px;
+			}
 		}
 	}
 }
