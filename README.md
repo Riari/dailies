@@ -6,8 +6,6 @@ Lightly gamified, MMO-inspired day-to-day task prioritising. Built on golang boi
 
 Dailies requires Go and Node.js. Run `go get -u .` to install dependencies.
 
-### Dev
-
 ```bash
 go generate
 go build
