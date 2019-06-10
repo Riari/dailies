@@ -4,7 +4,7 @@ Lightly gamified, MMO-inspired day-to-day task prioritising. Built on golang boi
 
 ## Build Instructions
 
-Dailies requires Go and Node.js. Run `go get -u .` to install dependencies.
+Dailies requires Go and Node.js.
 
 ```bash
 go generate
