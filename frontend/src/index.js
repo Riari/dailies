@@ -1,35 +1,26 @@
-import './style';
 import { Component } from 'preact';
-import Task from './components/Task';
 import { Menu, PlusSquare, X } from 'react-feather';
 
-if (!('indexedDB' in window)) {
-	alert('This browser doesn\'t support IndexedDB');
-}
+import './style';
+import db from './db';
+import TaskModel from './models/Task';
+import TaskList from './components/TaskList';
 
 export default class App extends Component {
+	constructor(props) {
+		super(props);
+		this.tasks = new TaskModel(db);
+        this.state = { incompleteTasks: [], completedTasks: [] };
+	}
+
+	componentDidMount() {
+		this.tasks.getByStatus(TaskModel.STATUS_INCOMPLETE)
+			.then(incompleteTasks => this.setState({ incompleteTasks }));
+		this.tasks.getByStatus(TaskModel.STATUS_COMPLETED)
+			.then(completedTasks => this.setState({ completedTasks }));
+	}
+
 	render() {
-		const incompleteTaskData = [
-			{ text: 'Do thing', type: 'incomplete' },
-			{ text: 'Bla bla bla', type: 'incomplete' },
-			{ text: 'Lorem ipsum', type: 'incomplete' },
-			{ text: 'Attend pointless meeting', type: 'incomplete' }
-		];
-		const completedTaskData = [
-			{ text: 'Do other thing', type: 'completed' },
-			{ text: 'Donate £10 to wedding fund', type: 'completed' }
-		]
-
-		const incompleteTasks = [];
-		for (let task of incompleteTaskData) {
-			incompleteTasks.push(<Task type={task.type}>{task.text}</Task>);
-		}
-
-		const completedTasks = [];
-		for (let task of completedTaskData) {
-			completedTasks.push(<Task type={task.type}>{task.text}</Task>);
-		}
-
 		return (
 			<div className="wrap">
 				<div className="side">
@@ -81,9 +72,9 @@ export default class App extends Component {
 					</div>
 					<div className="tasks">
 						<h2>Incomplete</h2>
-						{incompleteTasks}
+						<TaskList tasks={this.state.incompleteTasks} />
 						<h2>Completed Today</h2>
-						{completedTasks}
+						<TaskList tasks={this.state.completedTasks} />
 					</div>
 					<div className="action">
 						<button><PlusSquare /> Add</button>

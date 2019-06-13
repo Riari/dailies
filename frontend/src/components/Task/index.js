@@ -1,23 +1,24 @@
-import styles from './style';
 import { Component } from 'preact';
 import { Circle, CheckCircle } from 'react-feather';
+
+import styles from './style';
 
 export default class Task extends Component {
 	render() {
 		const icons = {
-			'incomplete': Circle,
-			'completed': CheckCircle
+			0: Circle,
+			1: CheckCircle
 		};
 
-		const Icon = icons[this.props.type];
+		const Icon = icons[this.props.status];
 
 		return (
-			<div className={styles.task} data-type={this.props.type}>
-				<div className={styles.title}>
+			<div className={styles.task} data-status={`status-${this.props.status}`}>
+				<div className={styles.summary}>
 					<Icon /> {this.props.children}
 				</div>
 				<div className={styles.xp}>
-					+250 XP
+					+{this.props.bounty} XP
 				</div>
 			</div>
 		);
