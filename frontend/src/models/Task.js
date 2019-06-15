@@ -21,6 +21,14 @@ export default class Task extends Model {
         });
     }
 
+    remove(id) {
+        return this.db.tasks.delete(id);
+    }
+
+    getAll() {
+        return this.db.tasks.toArray();
+    }
+
     getByStatus(status) {
         let query = this.db.tasks.where('status');
 

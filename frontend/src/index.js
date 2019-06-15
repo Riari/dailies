@@ -2,22 +2,12 @@ import { Component } from 'preact';
 import { Menu, PlusSquare, X } from 'react-feather';
 
 import './style';
-import db from './db';
-import TaskModel from './models/Task';
-import TaskList from './components/TaskList';
+import store, { tasksModule } from './store';
 
 export default class App extends Component {
 	constructor(props) {
 		super(props);
-		this.tasks = new TaskModel(db);
-        this.state = { incompleteTasks: [], completedTasks: [] };
-	}
-
-	componentDidMount() {
-		this.tasks.getByStatus(TaskModel.STATUS_INCOMPLETE)
-			.then(incompleteTasks => this.setState({ incompleteTasks }));
-		this.tasks.getByStatus(TaskModel.STATUS_COMPLETED)
-			.then(completedTasks => this.setState({ completedTasks }));
+		this.store = store;
 	}
 
 	render() {
@@ -72,9 +62,7 @@ export default class App extends Component {
 					</div>
 					<div className="tasks">
 						<h2>Incomplete</h2>
-						<TaskList tasks={this.state.incompleteTasks} />
 						<h2>Completed Today</h2>
-						<TaskList tasks={this.state.completedTasks} />
 					</div>
 					<div className="action">
 						<button><PlusSquare /> Add</button>
