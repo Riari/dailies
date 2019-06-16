@@ -13,11 +13,11 @@ export default class Task extends Component {
 		const Icon = icons[this.props.status];
 
 		return (
-			<div className={styles.task} data-status={`status-${this.props.status}`}>
-				<div className={styles.summary}>
+			<div class={styles.task} data-status={`status-${this.props.status}`}>
+				<div class={styles.summary}>
 					<Icon /> {this.props.children}
 				</div>
-				<div className={styles.xp}>
+				<div class={styles.xp}>
 					+{this.props.bounty} XP
 				</div>
 			</div>

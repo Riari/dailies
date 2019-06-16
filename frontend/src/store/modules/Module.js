@@ -1,11 +1,12 @@
 export default class Module {
-    actions = {}
+    initialState = { tasks: [] };
+    actions = store => ({});
 
     constructor(model) {
         this.model = model;
     }
 
-    getInitialState() {
+    getPersistedState() {
         return {};
     }
 }
