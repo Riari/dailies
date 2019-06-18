@@ -13,7 +13,7 @@ const Task = ({ children, ...props }) => {
 	return (
 		<div class={styles.task} data-status={`status-${props.status}`}>
 			<div class={styles.summary}>
-				<Icon /> {props.children}
+				<Icon /> {children}
 			</div>
 			<div class={styles.xp}>
 				+{props.bounty} XP
