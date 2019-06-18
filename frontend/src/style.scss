@@ -1,5 +1,4 @@
 @import './vars';
-@import './themes/dark';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap');
 
 html, body {
@@ -19,9 +18,39 @@ html, body {
 	min-height: 100vh;
 }
 
+button {
+	border: none;
+	outline: none;
+	padding: .5em 2em;
+	border-radius: .2em;
+	border: 1px solid $border-color;
+	background: none;
+	font-family: 'Roboto Slab', sans-serif;
+	font-weight: bold;
+	font-size: 1.1em;
+	color: $color-text;
+	transition: .1s background;
+	
+	&:hover {
+		background: rgba(153, 153, 153, .1);
+	}
+
+	&:active {
+		background: rgba(153, 153, 153, .15);
+	}
+
+	&.positive {
+		color: #40d69d;
+	}
+	
+	&.danger {
+		color: #df5050;
+	}
+}
+
 .side {
 	width: 280px;
-	border-right: 1px solid rgba(153, 153, 153, 0.2);
+	border-right: 1px solid $border-color;
 	background: $bg;
 	overflow: hidden;
 	will-change: width;
@@ -29,7 +58,7 @@ html, body {
 
 	.taskbar {
 		padding: 1em;
-		border-bottom: 1px solid rgba(153, 153, 153, 0.2);
+		border-bottom: 1px solid $border-color;
 		text-align: right;
 	}
 
@@ -38,7 +67,7 @@ html, body {
 
 		.section {
 			padding: 1em;
-			border-bottom: 1px solid rgba(153, 153, 153, 0.2);
+			border-bottom: 1px solid $border-color;
 
 			.item {
 				margin-bottom: .5em;
@@ -68,7 +97,7 @@ html, body {
 				transition: background .2s;
 
 				&:hover {
-					background: rgba(153, 153, 153, 0.2);
+					background: $border-color;
 				}
 
 				&.active {
@@ -168,7 +197,7 @@ html, body {
 			font-weight: bold;
 			color: #ff0062;
 			text-align: center;
-			border-top: 1px solid rgba(153, 153, 153, 0.2);
+			border-top: 1px solid $border-color;
 		
 			svg {
 				vertical-align: -6px;
