@@ -10,7 +10,7 @@
     z-index: 1000;
     background: rgba(37, 37, 43, 0.5);
 
-    &.active {
+    &[data-is-open="true"] {
         display: block;
     }
     
@@ -19,22 +19,27 @@
         min-height: 100vh;
 
         .dialog {
+            display: flex;
+            flex-direction: column;
             position: absolute;
             top: 50%;
             left: 50%;
-            min-width: 300px;
+            min-height: 200px;
+            max-height: 100vh;
+            min-width: 400px;
             max-width: 800px;
             transform: translate(-50%, -50%);
             border-radius: .4em;
             background: $bg;
-            box-shadow: 0 0 2em rgba(0, 0, 0, .3);
+            box-shadow: 0 0 1em rgba(0, 0, 0, .3);
 
             .title {
                 display: flex;
-                font-weight: bold;
-                font-size: 1.2em;
-                padding: 1.4em 1.4em 1em 1.4em;
+                height: 3em;
+                padding: .8em 1em .8em 1.4em;
+                box-sizing: border-box;
                 border-bottom: 1px solid $border-color;
+                font-size: 1.3em;
                 
                 span:first-child {
                     flex: 1;
@@ -44,22 +49,23 @@
                     display: inline-block;
                     width: 24px;
                     height: 24px;
-                    padding: 4px;
-                    margin-top: -8px;
-                    border-radius: 100%;
+                    opacity: .6;
+                    transition: .1s opacity;
 
                     &:hover {
-                        background: rgba(153, 153, 153, .1);
+                        opacity: 1;
                     }
 
                     &:active {
-                        background: rgba(153, 153, 153, .15);
+                        opacity: .8;
                     }
                 }
             }
 
             .content {
+                flex: 1 0 auto;
                 padding: 1.4em;
+                font-size: 1.2em;
                 line-height: 1.6em;
             }
 

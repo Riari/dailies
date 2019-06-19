@@ -1,4 +1,6 @@
 @import './themes/dark';
 
-$bg-gradient: linear-gradient(45deg, #7254b9 0%, #9878e0 100%);
+$primary-color: #7254b9;
+$primary-color-lighter: #9878e0;
+$bg-gradient: linear-gradient(45deg, $primary-color 0%, $primary-color-lighter 100%);
 $border-color: rgba(153, 153, 153, 0.2);

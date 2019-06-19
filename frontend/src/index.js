@@ -28,26 +28,26 @@ export default class App extends Component {
 							<div class="section stats">
 								<h2>Stats</h2>
 								<div class="item">
-									<strong>Level <span>43</span></strong>
+									<span>Level <strong>43</strong></span>
 									<div class="bar">
 										<div class="background"></div>
 										<div class="fill" style="width: 65%"></div>
 									</div>
 								</div>
 								<div class="item">
-									<strong>XP earned (today) <span>500</span></strong>
+									<span>XP earned (today) <strong>500</strong></span>
 								</div>
 								<div class="item">
-									<strong>XP earned (lifetime) <span>35,250</span></strong>
+									<span>XP earned (lifetime) <strong>35,250</strong></span>
 								</div>
 							</div>
 							<div class="section records">
 								<h2>Records</h2>
 								<div class="item">
-									<strong>Longest streak <span>9 days</span></strong>
+									<span>Longest streak <strong>9 days</strong></span>
 								</div>
 								<div class="item">
-									<strong>Most completions in a day <span>6 tasks</span></strong>
+									<span>Most completions in a day <strong>6 tasks</strong></span>
 								</div>
 							</div>
 						</div>

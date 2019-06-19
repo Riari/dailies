@@ -1,5 +1,5 @@
 @import './vars';
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Neuton:400,700&display=swap');
 
 html, body {
 	min-height: 100%;
@@ -7,9 +7,10 @@ html, body {
 	margin: 0;
 	padding: 0;
 	background: $bg;
-	font: 14px/1.21 'Roboto Slab', sans-serif;
+	font: 16px 'Neuton', sans-serif;
 	font-weight: 400;
 	color: $color-text;
+	user-select: none;
 }
 
 .wrap {
@@ -21,26 +22,34 @@ html, body {
 button {
 	border: none;
 	outline: none;
-	padding: .5em 2em;
+	padding: .4em 2em .6em 2em;
 	border-radius: .2em;
 	border: 1px solid $border-color;
 	background: none;
-	font-family: 'Roboto Slab', sans-serif;
-	font-weight: bold;
+	font-family: 'Neuton', sans-serif;
 	font-size: 1.1em;
 	color: $color-text;
-	transition: .1s background;
+	transition: .1s background, .1s border-color;
 	
 	&:hover {
-		background: rgba(153, 153, 153, .1);
+		border-color: rgba(153, 153, 153, .3);
 	}
 
 	&:active {
-		background: rgba(153, 153, 153, .15);
+		border-color: rgba(153, 153, 153, .5);
 	}
 
-	&.positive {
-		color: #40d69d;
+	&.primary {
+		border: none;
+		background: $primary-color;
+
+		&:hover {
+			background: darken($primary-color, 2%);
+		}
+
+		&:active {
+			background: darken($primary-color, 4%);
+		}
 	}
 	
 	&.danger {
@@ -108,8 +117,10 @@ button {
 		}
 
 		.stats {
-			strong {
-				span {
+			span {
+				font-size: 1.1em;
+
+				strong {
 					float: right;
 					color: #ffc13a;
 				}
@@ -139,8 +150,10 @@ button {
 		}
 
 		.records {
-			strong {
-				span {
+			span {
+				font-size: 1.1em;
+
+				strong {
 					float: right;
 					color: #28d37e;
 				}
