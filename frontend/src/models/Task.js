@@ -21,6 +21,10 @@ export default class Task extends Model {
         });
     }
 
+    update(id, changes) {
+        return this.db.tasks.update(id, changes);
+    }
+
     remove(id) {
         return this.db.tasks.delete(id);
     }

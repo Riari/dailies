@@ -8,35 +8,20 @@ class TasksModule extends Module {
             return {
                 tasks: [task]
             };
+        },
+        async update(state, task, changes) {
+            const index = state.tasks.indexOf(task);
+            if (index !== -1) state.tasks.splice(index, 1);
+
+            await this.model.update(task.id, changes);
+
+            task = { ...task, ...changes };
+
+            return {
+                tasks: [...state.tasks, task]
+            };
         }
     });
-
-    //     {
-    //     ADD_TASK: async ({ tasks, ...state }, { summary, details, bounty }) => {
-    //         const task = await this.model.create(summary, details, bounty);
-
-    //         return {
-    //             tasks: [...tasks, task],
-    //             ...state
-    //         };
-    //     },
-    //     GET_TASKS: async ({ _, ...state }) => {
-    //         const tasks = await this.model.getAll();
-
-    //         return {
-    //             ...tasks,
-    //             ...state
-    //         };
-    //     },
-    //     REMOVE_TASK: ({ tasks, ...state }, { task }) => {
-    //         this.model.remove(task.id);
-
-    //         return {
-    //             tasks: tasks.filter(i => i !== task),
-    //             ...state
-    //         };
-    //     }
-    // }
 
     async getPersistedState() {
         const tasks = await this.model.getAll();

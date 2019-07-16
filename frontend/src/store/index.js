@@ -11,7 +11,6 @@ const modules = [
     tasksModule
 ];
 
-
 let initialState = {};
 let persistedStates = [];
 
