@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { Provider } from 'unistore/preact';
-import { Menu, PlusSquare, X } from 'react-feather';
+import { Menu, PlusCircle, X } from 'react-feather';
 
 import './style';
 import store from './store';
@@ -61,12 +61,12 @@ export default class App extends Component {
 						</div>
 						<div class="tasks">
 							<h2>Incomplete</h2>
+							<button class="action">
+								<PlusCircle /> New task
+							</button>
 							<TaskList status={Task.STATUS_INCOMPLETE} />
 							<h2>Completed Today</h2>
 							<TaskList status={Task.STATUS_COMPLETED} />
-						</div>
-						<div class="action">
-							<button><PlusSquare /> Add</button>
 						</div>
 					</div>
 				</div>

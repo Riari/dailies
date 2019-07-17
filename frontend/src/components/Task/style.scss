@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-items: space-between;
     margin: 0 0 1rem 0;
-    padding-bottom: 3px;
+    padding: 1px 1px 2px 1px;
     border-radius: .4em;
     background: $bg-gradient;
     font-size: 1.1em;
@@ -21,7 +21,7 @@
 
     .summary {
         flex: 1;
-        padding: 1em;
+        padding: .9em;
     }
 
     .xp {
