@@ -11,30 +11,19 @@ export class ModalAction {
 }
 
 class Modal extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { isOpen: true };
-        this.close = this.close.bind(this);
-    }
-
     componentDidMount() {
         document.addEventListener('keyup', e => {
-            if (e.key == 'Escape') this.close();
+            if (e.key == 'Escape') this.props.onClose();
         });
     }
 
-    onClick(e) {
-        if (e.target.getAttribute('data-can-close')) this.close();
-    }
-
-    close() {
-        this.setState({ isOpen: false });
+    onClick = (e) => {
+        if (e.target.getAttribute('data-can-close')) this.props.onClose();
     }
 
     render() {
         return (
-            <div class={styles.modal} data-is-open={this.state.isOpen} onClick={this.close}>
+            <div class={styles.modal} data-is-open={this.props.isOpen} onClick={this.onClick}>
                 <div class={styles.inner} data-can-close>
                     <div class={styles.dialog}>
                         <div class={styles.title}>
