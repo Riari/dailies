@@ -1,5 +1,5 @@
 export default class Model {
-    constructor (db) {
-        this.db = db;
-    }
+  constructor(db) {
+    this.db = db;
+  }
 }

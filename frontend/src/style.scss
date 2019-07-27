@@ -1,241 +1,243 @@
-@import './vars';
-@import url('https://fonts.googleapis.com/css?family=Neuton:400,700&display=swap');
+@import "./vars";
+@import url("https://fonts.googleapis.com/css?family=Neuton:400,700&display=swap");
 
-html, body {
-	min-height: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	background: $bg;
-	font: 16px 'Neuton', sans-serif;
-	font-weight: 400;
-	color: $color-text;
-	user-select: none;
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: $bg;
+  font: 16px "Neuton", sans-serif;
+  font-weight: 400;
+  color: $color-text;
+  user-select: none;
 }
 
 .wrap {
-	display: flex;
-	height: 100%;
-	min-height: 100vh;
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
 }
 
-button, a {
-	display: block;
-	box-sizing: border-box;
-	border: none;
-	outline: none;
-	padding: .4em 2em .6em 2em;
-	border-radius: .2em;
-	border: 1px solid $border-color;
-	background: none;
-	font-family: 'Neuton', sans-serif;
-	font-size: 1.1em;
-	color: $color-text;
-	text-decoration: none;
-	transition: .1s background, .1s border-color;
-	
-	&:hover {
-		border-color: rgba(153, 153, 153, .3);
-	}
+button,
+a {
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  padding: 0.4em 2em 0.6em 2em;
+  border-radius: 0.2em;
+  border: 1px solid $border-color;
+  background: none;
+  font-family: "Neuton", sans-serif;
+  font-size: 1.1em;
+  color: $color-text;
+  text-decoration: none;
+  transition: 0.1s background, 0.1s border-color;
 
-	&:active {
-		border-color: rgba(153, 153, 153, .5);
-	}
+  &:hover {
+    border-color: rgba(153, 153, 153, 0.3);
+  }
 
-	&.primary {
-		border: none;
-		background: $primary-color;
+  &:active {
+    border-color: rgba(153, 153, 153, 0.5);
+  }
 
-		&:hover {
-			background: darken($primary-color, 2%);
-		}
+  &.primary {
+    border: none;
+    background: $primary-color;
 
-		&:active {
-			background: darken($primary-color, 4%);
-		}
-	}
-	
-	&.danger {
-		color: #df5050;
-	}
+    &:hover {
+      background: darken($primary-color, 2%);
+    }
+
+    &:active {
+      background: darken($primary-color, 4%);
+    }
+  }
+
+  &.danger {
+    color: #df5050;
+  }
 }
 
 .side {
-	width: 280px;
-	border-right: 1px solid $border-color;
-	background: $bg;
-	overflow: hidden;
-	will-change: width;
-	transition: width .2s ease-out;
+  width: 280px;
+  border-right: 1px solid $border-color;
+  background: $bg;
+  overflow: hidden;
+  will-change: width;
+  transition: width 0.2s ease-out;
 
-	.taskbar {
-		padding: 1em;
-		border-bottom: 1px solid $border-color;
-		text-align: right;
-	}
+  .taskbar {
+    padding: 1em;
+    border-bottom: 1px solid $border-color;
+    text-align: right;
+  }
 
-	.content {
-		width: 280px;
+  .content {
+    width: 280px;
 
-		.section {
-			padding: 1em;
-			border-bottom: 1px solid $border-color;
+    .section {
+      padding: 1em;
+      border-bottom: 1px solid $border-color;
 
-			.item {
-				margin-bottom: .5em;
-				color: transparentize($color-text, .3);
-			}
-		}
+      .item {
+        margin-bottom: 0.5em;
+        color: transparentize($color-text, 0.3);
+      }
+    }
 
-		h2 {
-			padding: 0;
-			margin: 0 0 1em 0;
-		}
+    h2 {
+      padding: 0;
+      margin: 0 0 1em 0;
+    }
 
-		ul {
-			display: block;
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			white-space: nowrap;
+    ul {
+      display: block;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      white-space: nowrap;
 
-			li {
-				padding: .8em 1.2em;
-				margin: 0 0 .5em 0;
-				border-radius: .4em;
-				font-weight: bold;
-				color: $color-text;
-				cursor: pointer;
-				transition: background .2s;
+      li {
+        padding: 0.8em 1.2em;
+        margin: 0 0 0.5em 0;
+        border-radius: 0.4em;
+        font-weight: bold;
+        color: $color-text;
+        cursor: pointer;
+        transition: background 0.2s;
 
-				&:hover {
-					background: $border-color;
-				}
+        &:hover {
+          background: $border-color;
+        }
 
-				&.active {
-					background: $bg-gradient;
-					color: #fff;
-				}
-			}
-		}
+        &.active {
+          background: $bg-gradient;
+          color: #fff;
+        }
+      }
+    }
 
-		.stats {
-			span {
-				font-size: 1.1em;
+    .stats {
+      span {
+        font-size: 1.1em;
 
-				strong {
-					float: right;
-					color: #ffc13a;
-				}
-			}
+        strong {
+          float: right;
+          color: #ffc13a;
+        }
+      }
 
-			.bar {
-				position: relative;
-				margin: 1em 0;
-				height: .8em;
+      .bar {
+        position: relative;
+        margin: 1em 0;
+        height: 0.8em;
 
-				.background {
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					border-radius: .2em;
-					background: rgba(0, 0, 0, .2);
-				}
+        .background {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 0.2em;
+          background: rgba(0, 0, 0, 0.2);
+        }
 
-				.fill {
-					position: absolute;
-					height: 100%;
-					border-radius: .2em;
-					background: linear-gradient(45deg, #ffc13a 0%, #ffd270 100%);
-					box-shadow: 0 0 5px rgba(#ff823a, .5);
-				}
-			}
-		}
+        .fill {
+          position: absolute;
+          height: 100%;
+          border-radius: 0.2em;
+          background: linear-gradient(45deg, #ffc13a 0%, #ffd270 100%);
+          box-shadow: 0 0 5px rgba(#ff823a, 0.5);
+        }
+      }
+    }
 
-		.records {
-			span {
-				font-size: 1.1em;
+    .records {
+      span {
+        font-size: 1.1em;
 
-				strong {
-					float: right;
-					color: #28d37e;
-				}
-			}
-		}
-	}
+        strong {
+          float: right;
+          color: #28d37e;
+        }
+      }
+    }
+  }
 }
 
 .main {
-	display: flex;
-	min-height: 100vh;
-	flex: 1;
-	flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  flex: 1;
+  flex-direction: column;
 
-	.hero {
-		background: $bg-gradient;
-	
-		.taskbar {
-			padding: 1em;
-			border-bottom: 1px solid rgba(255, 255, 255, .2);
-	
-			svg {
-				color: #fff;
-			}
-		}
-	
-		h1 {
-			margin: 0;
-			padding: 2em 0;
-			text-align: center;
-			color: #fff;
-		}
-	}
+  .hero {
+    background: $bg-gradient;
 
-	.tasks {
-		padding: 2em;
-		flex: 1 0 auto;
+    .taskbar {
+      padding: 1em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-		h2:first-child {
-			margin-top: 0;
-		}
+      svg {
+        color: #fff;
+      }
+    }
 
-		.action {
-			display: flex;
-			flex-direction: row;
-			justify-items: space-between;
-			margin: 0 0 1rem 0;
-			padding: .9em;
-			width: 100%;
-			border-radius: .4em;
-			font-size: 1.1em;
-			color: transparentize($color-text, .5);
-			text-shadow: 0 2px 1px rgba(0, 0, 0, .3);
-			transition: border-color .1s, color .1s;
-			cursor: pointer;
-		
-			&:hover {
-				border-color: lighten($border-color, 30%);
-				color: $color-text;
+    h1 {
+      margin: 0;
+      padding: 2em 0;
+      text-align: center;
+      color: #fff;
+    }
+  }
 
-				svg {
-					opacity: .8;
-				}
-			}
-		
-			svg {
-				width: 1.3em;
-				height: 1.3em;
-				margin-right: .7em;
-				vertical-align: -4px;
-				opacity: .5;
-				transition: opacity .1s;
-			}
-		}
-	}
+  .tasks {
+    padding: 2em;
+    flex: 1 0 auto;
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    .action {
+      display: flex;
+      flex-direction: row;
+      justify-items: space-between;
+      margin: 0 0 1rem 0;
+      padding: 0.9em;
+      width: 100%;
+      border-radius: 0.4em;
+      font-size: 1.1em;
+      color: transparentize($color-text, 0.5);
+      text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+      transition: border-color 0.1s, color 0.1s;
+      cursor: pointer;
+
+      &:hover {
+        border-color: lighten($border-color, 30%);
+        color: $color-text;
+
+        svg {
+          opacity: 0.8;
+        }
+      }
+
+      svg {
+        width: 1.3em;
+        height: 1.3em;
+        margin-right: 0.7em;
+        vertical-align: -4px;
+        opacity: 0.5;
+        transition: opacity 0.1s;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 42em) {
-	.side {
-		width: 0;
-	}
+  .side {
+    width: 0;
+  }
 }
