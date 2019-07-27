@@ -1,7 +1,7 @@
 import { connect } from 'unistore/preact';
 
-import { tasksModule } from '../../store';
-import TaskModel from '../../models/Task';
+import { tasksModule } from '../../../store';
+import TaskModel from '../../../models/Task';
 import Task from '../Task';
 
 const filter = (state, props) => {

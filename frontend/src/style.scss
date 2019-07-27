@@ -19,7 +19,9 @@ html, body {
 	min-height: 100vh;
 }
 
-button {
+button, a {
+	display: block;
+	box-sizing: border-box;
 	border: none;
 	outline: none;
 	padding: .4em 2em .6em 2em;
@@ -29,6 +31,7 @@ button {
 	font-family: 'Neuton', sans-serif;
 	font-size: 1.1em;
 	color: $color-text;
+	text-decoration: none;
 	transition: .1s background, .1s border-color;
 	
 	&:hover {
