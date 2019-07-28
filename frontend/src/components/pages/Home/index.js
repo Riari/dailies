@@ -49,7 +49,7 @@ const Home = ({ children, ...props }) => {
         <h2>Incomplete</h2>
         <a href="/task/new" class="action">
           <PlusCircle /> New task
-                </a>
+        </a>
         <TaskList status={Task.STATUS_INCOMPLETE} />
         <h2>Completed Today</h2>
         <TaskList status={Task.STATUS_COMPLETED} />

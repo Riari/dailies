@@ -12,14 +12,14 @@ const modules = [
 ];
 
 let initialState = {};
-let persistedStates = [];
+const persistedStates = [];
 
 for (const module of modules) {
   initialState = { ...module.initialState, ...initialState };
   persistedStates.push(module.getPersistedState());
 }
 
-let store = process.env.NODE_ENV === 'production' ? createStore(initialState) : devtools(createStore(initialState));
+const store = process.env.NODE_ENV === 'production' ? createStore(initialState) : devtools(createStore(initialState));
 
 Promise.all(persistedStates).then(states => {
   let persistedState = {};
