@@ -1,11 +1,14 @@
+import { Component } from 'preact';
 import DefaultLayout from '../../layouts/Default';
 
-const EditTask = ({ children, ...props }) => {
-  return (
-    <DefaultLayout heading="New task">
-      <div></div>
-    </DefaultLayout>
-  )
+class EditTask extends Component {
+  render = (props, state) => {
+    return (
+      <DefaultLayout heading="New task">
+        <div></div>
+      </DefaultLayout>
+    )
+  }
 }
 
 export default EditTask;

@@ -7,6 +7,10 @@ import store from './store';
 import EditTask from './components/pages/EditTask';
 import Home from './components/pages/Home';
 
+if (module.hot) {
+  require('preact/debug');
+}
+
 const App = () => {
   return (
     <Provider store={store}>
